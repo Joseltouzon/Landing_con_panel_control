@@ -68,14 +68,18 @@
 
 
 <!-- FORMS -->
-<div class="row">
-  <div class="col-lg-12">
-    <div class="well">
-      <?if($_POST['action']=='find' || $_POST['action']=='update'){?>
-        <h4>Modificar Canción</h4>
-      <?}else{?>
-        <h4>Nueva Canción</h4>
-      <?}?>
+<div class="content-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="card">
+          <div class="card-body">
+            <? if ($_POST['action'] == 'find' || $_POST['action'] == 'update') { ?>
+              <h4 class="card-title">Modificar Canción</h4>
+            <? } else { ?>
+              <h4 class="card-title">Crear Canción</h4>
+            <? } ?>
+            <div class="basic-form">
       <form method="post" enctype="multipart/form-data">
 
         <?=$estado?>
@@ -90,7 +94,7 @@
         </div>
         <div class="row">
           <div class="col-xs-6 col-lg-6">   
-            Video <input type="text" class="form-control" name="video" placeholder="Video" value="<?=$cancionDetails['video']?>"/><br>
+            Video <input type="text" class="form-control" name="video" placeholder="Link del video de la canción" value="<?=$cancionDetails['video']?>"/><br>
           </div>
           
         </div>
@@ -99,7 +103,7 @@
             Imagen <input type="file" class="form-control" name="img" placeholder="Imagen" value="<?=$cancionDetails['img']?>"/><br>
           </div>
         </div>
-        <textarea class="form-control" name="descripcion" rows="3" placeholder="Descripción del Video" id="editor"><?=$postDetails['descripcion']?></textarea><br>
+        <textarea class="form-control textarea_editor" name="descripcion" rows="3" placeholder="Descripción de la Canción" id="editor"><?=$postDetails['descripcion']?></textarea><br>
         <br>
         <?if($_POST['action']=='find' || $_POST['action']=='update'){?>
           <input type="hidden" name="action" value="update">
@@ -114,11 +118,17 @@
       </form>
     </div>
   </div>
+    </div>
+  </div>
 </div>
 <div class="row">
-  <div class="col-lg-12">
-    <h4>Canciones</h4>
-    <table class="table">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Canciones</h4>
+            <div class="table-responsive">
+              <table class="table">
+                <thead style="background-color: #6ed3cf;color: #fff;">
       <tr>
         <td><b>Img</b></td>
         <td><b>Titulo</b></td>
@@ -127,7 +137,8 @@
         
         <td><b>Acciones</b></td>
       </tr>
-    
+                </thead>
+                <tbody>
       <?
       $sq = $cancion->read($link);
       while($resultado = mysqli_fetch_array( $sq)){
@@ -147,29 +158,24 @@
               <input type="hidden" name="action"  value="find">
               <input type="hidden" name="id" value="<?=$resultado['id']?>">
               <button class="btn btn-warning btn-sm" type="submit" style="margin-right:5px;">
-                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="fa fa-pencil"></span>
               </button>
             </form>
             <form method="post" class='pull-left'>
               <input type="hidden" name="action" value="delete">
               <input type="hidden" name="id" value="<?=$resultado['id']?>">
-              <button class="btn btn-danger btn-sm" type="submit" style="margin-right:5px;"><span class="glyphicon glyphicon-remove"></span></button>
+              <button class="btn btn-danger btn-sm" type="submit" style="margin-right:5px;"><span class="fa fa-remove"></span></button>
             </form>
           </td>
         </tr>
       
       <?}?>
+                </tbody>
     </table>
   </div>
 </div>  
-
-<script>
-  $(document).ready(function(){
-    /*$(".confirmaCat").click(function(){
-      if(confirm("¿Desea modificar?")){
-        var form = $(this).attr("rel");
-        $("#formConfirma"+form).submit();
-      }
-    });*/
-  });
-</script>
+        </div>
+      </div>
+</div>
+      </div>
+      </div>
