@@ -72,8 +72,8 @@
 							<li class="menu-item"><a href="https://tinyurl.com/2p86yfn3" target="_blank">Descarga El Juego del Hipopótamo</a></li>
 						</ul>
 					</li>
-					<li class="menu-item"><a href="https://www.canva.com/design/DAFLeEZSXdM/IWQwvs2uXY1YsmR0a8RF6g/view?website#2" target="_blank">Guía de Alimentación para Bebés</a></li>
-					<li class="menu-item"><a href="https://www.canva.com/design/DAFI9cwYzjE/r1itSTtZMOF7hNZ2VhYs0A/view?website#2:conoce-a-la-instructora" target="_blank">Yoga para Niños</a></li>
+					<li class="menu-item"><a href="https://www.canva.com/design/DAFLeEZSXdM/IWQwvs2uXY1YsmR0a8RF6g/view?utm_content=DAFLeEZSXdM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" target="_blank">Guía de Alimentación para Bebés</a></li>
+					<li class="menu-item"><a href="https://www.canva.com/design/DAFI9cwYzjE/r1itSTtZMOF7hNZ2VhYs0A/view?website#2" target="_blank">Yoga para Niños</a></li>
 
 					<!--<li class="menu-item"><a href="https://www.memeymuma.com/kit-cumple.pdf" target="_blank">Descarga tu Kit de Cumpleaños</a></li>-->
 				</ul>
